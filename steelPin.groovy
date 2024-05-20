@@ -3,6 +3,7 @@ import java.util.stream.Collectors;
 import com.neuronrobotics.bowlerstudio.vitamins.Vitamins;
 import eu.mihosoft.vrl.v3d.CSG;
 import eu.mihosoft.vrl.v3d.Cube;
+import eu.mihosoft.vrl.v3d.Cylinder
 CSG generate(){
 	String type= "steelPin"
 	if(args==null)
@@ -27,7 +28,9 @@ CSG generate(){
 		println "steelPin value "+key+" "+measurments.get(key);
 }
 	// Stub of a CAD object
-	CSG part = new Cube().toCSG()
+	CSG part = new Cylinder(pinDiameterValue/2, pinLengthValue).toCSG()
+				.moveToCenterZ()
+				.setColor(javafx.scene.paint.Color.SILVER)
 	return part
 		.setParameter(size)
 		.setRegenerate({generate()})
