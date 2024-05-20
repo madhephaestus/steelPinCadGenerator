@@ -25,7 +25,7 @@ CSG generate(){
 	def shaftTypeValue = measurments.shaftType
 	def sourceValue = measurments.source
 	for(String key:measurments.keySet().stream().sorted().collect(Collectors.toList())){
-		println "steelPin value "+key+" "+measurments.get(key);
+		//println "steelPin value "+key+" "+measurments.get(key);
 }
 	// Stub of a CAD object
 	CSG part = new Cylinder(pinDiameterValue/2, pinLengthValue).toCSG()
